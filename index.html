@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Brickwork House - Level 1 City & Guilds NVQ</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 3D Canvas -->
+        <canvas id="canvas"></canvas>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="panel-section">
+                <h1>🏗️ Interactive Brickwork House</h1>
+                <p><strong>Level 1 City & Guilds NVQ</strong></p>
+                <p style="font-size: 12px; color: #888; margin-top: 5px;">
+                    Explore how a brick house is constructed from footings to roof
+                </p>
+            </div>
+
+            <!-- Layer Controls -->
+            <div class="panel-section">
+                <h2>Construction Stages</h2>
+                <p>Click each stage to see it in detail. Build the house step by step.</p>
+                <div class="btn-group">
+                    <button class="layer-btn active" data-layer="0">1. Ground Preparation</button>
+                    <button class="layer-btn" data-layer="1">2. Concrete Foundations</button>
+                    <button class="layer-btn" data-layer="2">3. DPC & First Course</button>
+                    <button class="layer-btn" data-layer="3">4. Cavity Wall Build</button>
+                    <button class="layer-btn" data-layer="4">5. First Lift (1.2m)</button>
+                    <button class="layer-btn" data-layer="5">6. Wall Complete</button>
+                    <button class="layer-btn" data-layer="6">7. Roof Structure</button>
+                </div>
+                <button class="reset-btn" id="resetBtn">Reset View</button>
+            </div>
+
+            <!-- View Controls -->
+            <div class="panel-section">
+                <h2>View Options</h2>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" data-view="assembled">Full Build</button>
+                    <button class="toggle-btn" data-view="exploded">Cross-Section</button>
+                </div>
+            </div>
+
+            <!-- Current Layer Info -->
+            <div class="panel-section" id="layerInfo">
+                <h2>Ground Preparation</h2>
+                <p>
+                    The first stage of building is preparing the ground. All vegetation, 
+                    topsoil, and unstable ground must be removed down to firm ground.
+                </p>
+                <div class="info-box">
+                    <strong>What you'll learn:</strong> Site assessment, levelling, 
+                    compaction, and drainage requirements.
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Depth</div>
+                        <div class="stat-value">0.5m</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Key Material</div>
+                        <div class="stat-value">Earth</div>
+                    </div>
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Health & Safety:</strong> Always check for underground services 
+                    before excavation. Call 811 to have services marked out.
+                </div>
+            </div>
+
+            <!-- Materials Guide -->
+            <div class="panel-section">
+                <h2>Materials Used</h2>
+                <div id="materialsList" style="font-size: 13px;">
+                    <div style="margin: 8px 0; padding: 8px; background: #fff; border-radius: 3px;">
+                        <strong style="color: #8b4513;">🧱 Earth & Subsoil</strong><br>
+                        <span style="color: #666; font-size: 12px;">Compact firm ground</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Legend -->
+            <div class="controls-legend">
+                <h3>🎮 Mouse Controls</h3>
+                <div class="legend-item">
+                    <strong>Left Click + Drag:</strong> Rotate view
+                </div>
+                <div class="legend-item">
+                    <strong>Right Click + Drag:</strong> Pan camera
+                </div>
+                <div class="legend-item">
+                    <strong>Scroll Wheel:</strong> Zoom in/out
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@r128/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/layers.js"></script>
+    <script src="js/3dscene.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "interactive-brickwork-house",
+  "version": "1.0.0",
+  "description": "Interactive 3D web-based learning tool for Level 1 City & Guilds Brickwork NVQ",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "server": "npx http-server"
+  },
+  "keywords": [
+    "brickwork",
+    "construction",
+    "education",
+    "3d",
+    "interactive",
+    "learning"
+  ],
+  "author": "Brickwork Lecturer",
+  "license": "Educational"
+}
